@@ -1,0 +1,21 @@
+*** DESIGN SPECIFICATION ***
+Output load impedance: 32-300 Ohm and optimized for nominal impedance of your headphone 
+Maximum output power (continuous): > 100 mW/ch (on battery) or >200mW/ch (on regulated AC power) on 32 Ohm load 
+Output impedance: < 5 Ohm 
+Input signal amplitude: 0.3V (nominal Vrms) o
+Input impedance: > 10k Ohm
+3-dB full-power bandwidth: 20Hz-15kHz (min), 18Hz-20kHz (max) 
+Total harmonic distortion + noise (THD+N): <0.2% with 100mW on nominal load at 1kHz 
+Power supply voltage: ±7-±9V (when using 2x 9V batteries) or ±12V (when using regulated AC power supply) 
+Power consumption: <100mA (on battery) or <200mA (on regulated AC power) at max output power 
+
+*** FIRST STAGE  ***
+1st stage is voltage gain:
+C1 and R2 are highpass filter controling the low frequency bound 
+R1 is the volumn control using voltage divider such that Vpos = Vin*(R2/R1+R2)
+R3 and R4 control the gain. Av1 = 1 + R4/R3
+R5 and C2 are lowpass filter controling the high frequency bound 
+R6 is the load resistance (input resistance of stage2)
+
+	stage1.sp : AC analysis
+	stage1_trans.sp : transient analysis
