@@ -10,13 +10,13 @@ Vin 1 GND SIN (0 0.9V 500Hz)
 
 ** COMPONENTS **
 XAMP1 Vpos Vneg VDD VEE out OPA2134
-C1 2 Vpos 68nF
+C1 2 Vpos .47uF
 R1 1 2 1k
 R2 Vpos GND 9.1k
 R3 Vneg GND 1k
-R4 Vneg out 10k
+R4 Vneg out 35k
 R5 out next 1.3k
-C2 next GND 100nF
+C2 next GND 15nF
 R6 next GND 10k
 
 **ANALYSIS **
