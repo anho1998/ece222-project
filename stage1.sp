@@ -10,18 +10,18 @@ Vin 1 GND AC 1V
 *.SUBCKT OPA134 99 98 97 96 95
 ** COMPONENTS **
 XAMP1 Vpos Vneg VDD VEE out OPA2134
-C1 2 Vpos 68nF
+C1 2 Vpos 0.47uF
 R1 1 2 1k
 R2 Vpos GND 9.1k
 R3 Vneg GND 1k
-R4 Vneg out 10k
+R4 Vneg out 30k
 R5 out next 1.3k
-C2 next GND 100nF
+C2 next GND 15nF
 R6 next GND 10k
 
 **ANALYSIS **
 *.DC Vin 0 3.3 0.1 
-.AC DEC 100 1 25kHz 
+.AC DEC 100 1 100kHz 
 **OUTPUT
 **.PLOT i(MNQ2) 
 
@@ -29,8 +29,11 @@ R6 next GND 10k
 *.PROBE AC rout=PAR('v(Vout)/i(R5)')
 .PROBE AC gain=PAR('v(next)/v(1)')
 .PROBE AC gain_db=PAR('db(v(next)/v(1))')
-.MEAS AC f WHEN PAR('gain_db')=-3 
-*.MEAS DC gain_var PARAM = 'v(out)/v(1)'
+.MEAS AC out_max max v(next)
+.MEAS AC in_max max v(1)
+.MEAS AC gain_max PARAM = 'out_max/in_max'
+.MEAS AC f WHEN PAR('gain') = 'gain_max/2' 
+.PROBE AC Rin=PAR('V(1)/(i(R1)-i(R2))')
 **.MEAS DC v FIND v(out) WHEN PAR('gain') = 10
 **.MEAS DC id FIND i(MNQ2) WHEN v(out)= 0.6
 **
