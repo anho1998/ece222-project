@@ -1,0 +1,13 @@
+***** HSPICE -- D-2010.03-SP1 32-BIT (May 27 2010) linux ******
+ Input File: fullamp.sp
+ lic:
+ lic: FLEXlm: v8.5b
+ lic: USER:   taktas               HOSTNAME: mnemosyne
+ lic: HOSTID: d4ae527c435f         PID:      27912
+ lic: Using FLEXlm license file:
+ lic: 5280@lm8.seas.rochester.edu
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 19-apr-2020/2018.09
+ lic: FLOATING license(s) on SERVER lm8.seas.rochester.edu
+ lic:
+ lic: Release hspice token(s)
