@@ -10,7 +10,7 @@ Using: /usr/bin/time -p /usr/ece/synopsys/hspice_vD-2010.03-SP1/hspice/linux/hsp
  lic:  
  lic: FLEXlm: v8.5b 
  lic: USER:   taktas               HOSTNAME: mnemosyne 
- lic: HOSTID: d4ae527c435f         PID:      27912 
+ lic: HOSTID: d4ae527c435f         PID:      3456 
  lic: Using FLEXlm license file: 
  lic: 5280@lm8.seas.rochester.edu 
  lic: Checkout 1 hspice 
@@ -18,7 +18,28 @@ Using: /usr/bin/time -p /usr/ece/synopsys/hspice_vD-2010.03-SP1/hspice/linux/hsp
  lic: FLOATING license(s) on SERVER lm8.seas.rochester.edu 
  lic:   
  Init: read install configuration file: /usr/ece/synopsys/hspice_vD-2010.03-SP1/hspice/meta.cfg
- **error** (fullamp.sp:55) unable to open file "sedra_mod_lib" .Either file doesn't exists or path is wrong. Please enter the correct file location. 
+ **error** (error:1)syntax error at or before  0
+
+Syntax reference: 
+Syntax
+Passive and active device model syntax
+.MODEL mname type [level=num]
++ [pname1=val1 pname2=val2 ...]
+See specific element type for supported model parameter information.
+Optimization model syntax
+.MODEL mname OPT [METHOD][close=num] [max] [cut=num]
++ [difsiz=num] [grad=num] [parmin=num] [relin=num]
++ [relout=num] [itrop=num] [DYNACC=0|1]
+The following syntax is used for a Monte Carlo analysis:
+.MODEL mname ModelType ([level=val]
++ [keyword1=val1][keyword2=val2]
++ [keyword3=val3][lot/n /distribution value]
++ [DEV/n /distribution value]...)
+.model mname mosra
++ level|mosralevel value
++ [relmodelparam]
+
+
 
                ***** job aborted
  lic: Release hspice token(s) 
